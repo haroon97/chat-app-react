@@ -1,8 +1,15 @@
+import { Routes, Route } from "react-router-dom";
+import Chat from "./pages/chat";
+import Login from "./pages/login";
+import Register from "./pages/register";
+
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Gain chat front end</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/chat" element={<Chat />} />
+    </Routes>
   );
 }
 
