@@ -1,6 +1,8 @@
-const Input = ({ type, placeholder }) => {
+const Input = ({ type, placeholder, id, name, value, onChange, onBlur }) => {
   return (
     <input
+      id={id}
+      name={name}
       type={type}
       className={
         type === "submit"
@@ -8,6 +10,9 @@ const Input = ({ type, placeholder }) => {
           : "border border-gray-300 focus:outline-none focus:border-gray-400 text-gray-600 rounded-xl p-2 w-3/6 text-sm"
       }
       placeholder={placeholder}
+      onChange={onChange}
+      onBlur={onBlur}
+      value={value}
     />
   );
 };
