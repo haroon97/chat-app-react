@@ -21,7 +21,9 @@ const Register = () => {
       email: Yup.string()
         .email("Invalid email address")
         .required("Email is required"),
-      password: Yup.string().required("Password is required"),
+      password: Yup.string()
+        .min(6, "Password must be 6 characters")
+        .required("Password is required"),
       confirmPassword: Yup.string()
         .oneOf([Yup.ref("password"), null], "Passwords must match")
         .required("Password is required"),
@@ -51,11 +53,11 @@ const Register = () => {
                 onBlur={formik.handleBlur}
                 value={formik.values[config.id]}
               />
-              {formik.touched[config.id] && formik.errors[config.id] ? (
+              {formik.touched[config.id] && formik.errors[config.id] && (
                 <p className="text-xs text-red-400 mt-1">
                   {formik.errors[config.id]}
                 </p>
-              ) : null}
+              )}
             </div>
           ))}
           <div className="text-center pt-2">
