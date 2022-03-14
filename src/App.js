@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      <h1>Gain chat front end</h1>
+      <h1 className="text-3xl font-bold underline">Gain chat front end</h1>
     </div>
   );
 }
