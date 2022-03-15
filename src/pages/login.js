@@ -3,6 +3,7 @@ import Input from "../components/input";
 import Layout from "../components/layout";
 import { loginConfig } from "../config/authConfig";
 import * as Yup from "yup";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const formik = useFormik({
@@ -50,6 +51,14 @@ const Login = () => {
             <Input type="submit" />
           </div>
         </form>
+        <div className="text-center pt-3">
+          <Link
+            className="text-md text-gray-600 hover:text-gray-800"
+            to="/register"
+          >
+            Don't have an account? Sign Up here.
+          </Link>
+        </div>
       </div>
     </Layout>
   );
